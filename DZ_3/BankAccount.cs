@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DZ_2
+namespace DZ_3
 {
     enum TypeOfAccount
     {
@@ -69,7 +69,7 @@ namespace DZ_2
         {
             if (Balance - num > 0)
             {
-                Balance += num;
+                Balance -= num;
             }
             else 
             {
@@ -139,7 +139,14 @@ namespace DZ_2
 
             NumberAccount = numberAccount;
         }
-        
+
+        public void Transaction(BankAccount account, double amount)
+        {
+            account.DownBalance(amount);
+            UpBalance(amount);
+        }
+
+
         public BankAccount()
         {
             CreateNumberAccount();
